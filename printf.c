@@ -1,7 +1,7 @@
 #define NULL (void*)0
 #define size_t unsigned int
 
-#if defined _WIN32 || _WIN64
+#if defined _MSC_VER
     typedef unsigned char* va_list;
     #define va_start(list, start) (list = (va_list)(&start + 1))
     #define va_arg(list, type)    (list += sizeof(type), *(type*)(list - sizeof(type)))
